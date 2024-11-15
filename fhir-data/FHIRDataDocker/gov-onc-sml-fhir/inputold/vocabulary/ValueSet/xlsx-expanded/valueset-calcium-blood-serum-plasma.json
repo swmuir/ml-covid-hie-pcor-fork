@@ -1,0 +1,104 @@
+{
+  "resourceType": "ValueSet",
+  "id": "calcium-blood-serum-plasma",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "narrative"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+    "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  } ],
+  "url": "http://emiadvisors.net/fhir/ValueSet/calcium-blood-serum-plasma",
+  "version": "20240531",
+  "title": "Calcium in Blood, Serum or Plasma",
+  "status": "active",
+  "experimental": false,
+  "publisher": "EMI Advisors, Inc.",
+  "expansion": {
+    "timestamp": "2024-05-31T10:49:00-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "2000-8",
+      "display": "Calcium [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40067-1",
+      "display": "Calcium [Mass/volume] in Serum or Plasma --baseline"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40226-3",
+      "display": "Calcium [Moles/volume] in Serum or Plasma --baseline"
+    }, {
+      "system": "http://loinc.org",
+      "code": "51950-4",
+      "display": "Calcium [Mass/volume] in Serum or Plasma --post dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "59148-7",
+      "display": "Calcium [Moles/volume] in Serum or Plasma --post dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "34907-6",
+      "display": "Calcium [Mass/volume] corrected for total protein in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "18281-6",
+      "display": "Calcium [Moles/volume] corrected for total protein in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "1993-5",
+      "display": "Calcium renal clearance in 24 hour Urine and Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "1384-7",
+      "display": "Calcium [Moles/volume] in Blood --post calcium infusion"
+    }, {
+      "system": "http://loinc.org",
+      "code": "27182-5",
+      "display": "Calcium [Presence] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "1996-8",
+      "display": "Calcium [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "42857-3",
+      "display": "Calcium [Moles/volume] in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "49765-1",
+      "display": "Calcium [Mass/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "16273-5",
+      "display": "Calcium [Mass/mass] in Red Blood Cells"
+    }, {
+      "system": "http://loinc.org",
+      "code": "42593-4",
+      "display": "Calcium [Moles/volume] in Capillary blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "25583-6",
+      "display": "Calcium [Moles/volume] in Red Blood Cells"
+    }, {
+      "system": "http://loinc.org",
+      "code": "47597-0",
+      "display": "Calcium [Moles/volume] corrected for total protein in Blood"
+    } ]
+  }
+}

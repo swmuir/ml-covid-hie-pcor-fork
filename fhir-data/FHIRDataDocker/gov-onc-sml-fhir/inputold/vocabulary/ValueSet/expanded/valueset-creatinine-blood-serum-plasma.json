@@ -1,0 +1,104 @@
+{
+  "resourceType": "ValueSet",
+  "id": "creatinine-blood-serum-plasma",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "narrative"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+    "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  } ],
+  "url": "http://emiadvisors.net/fhir/ValueSet/creatinine-blood-serum-plasma",
+  "version": "20240531",
+  "title": "Creatinine, Blood, Serum, or Plasma",
+  "status": "active",
+  "experimental": false,
+  "publisher": "EMI Advisors, Inc.",
+  "expansion": {
+    "timestamp": "2024-06-12T08:20:29-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "59826-8",
+      "display": "Creatinine [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "21232-4",
+      "display": "Creatinine [Mass/volume] in Arterial blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "101475-2",
+      "display": "Creatinine [Moles/volume] in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "38483-4",
+      "display": "Creatinine [Mass/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "77140-2",
+      "display": "Creatinine [Moles/volume] in Serum, Plasma or Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2160-0",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "14682-9",
+      "display": "Creatinine [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40248-7",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma --baseline"
+    }, {
+      "system": "http://loinc.org",
+      "code": "40264-4",
+      "display": "Creatinine [Moles/volume] in Serum or Plasma --baseline"
+    }, {
+      "system": "http://loinc.org",
+      "code": "44784-7",
+      "display": "Creatinine [Mass/volume] (Maximum value during study) in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "103616-9",
+      "display": "Creatinine [Moles/volume] in Serum or Plasma by LC/MS/MS"
+    }, {
+      "system": "http://loinc.org",
+      "code": "16189-3",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma --4 hour specimen"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11042-9",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma --pre dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "51619-5",
+      "display": "Creatinine [Moles/volume] in Serum or Plasma --pre dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11041-1",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma --post dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "51620-3",
+      "display": "Creatinine [Moles/volume] in Serum or Plasma --post dialysis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "16188-5",
+      "display": "Creatinine [Mass/volume] in Serum or Plasma --2 hour specimen"
+    } ]
+  }
+}

@@ -1,0 +1,5 @@
+
+docker build --no-cache -t onc.sml.synthea .
+ 
+docker run --network="host"  -v /$(pwd)/fhir:/oncfhirinput -it  onc.sml.synthea 
+

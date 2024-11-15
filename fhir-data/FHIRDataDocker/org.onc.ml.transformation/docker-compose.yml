@@ -1,0 +1,20 @@
+version: '2'
+services:
+  org.onc.ml.transformation :
+    image: onc.sml.transformation:latest
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8282/mdmi/transformation" ]
+      interval: 10s
+      timeout: 2s
+      retries: 30
+      start_period: 10s    
+    mem_reservation: 4048m
+    container_name: onc-mdmi
+    environment:
+      - JAVA_OPTS="-Xmx6048m"
+      - LOGGING_LEVEL_MDMI=INFO
+      - MDMI_SOURCE_FILTER_FLAG=true
+    network_mode: default
+    ports:
+      - "8282:8282"
+    restart: always

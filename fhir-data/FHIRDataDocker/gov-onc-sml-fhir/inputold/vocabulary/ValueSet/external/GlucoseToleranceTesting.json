@@ -1,0 +1,94 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1034.360",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2023-12-21T17:43:03.000-05:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
+    "valueDate": "2021-01-13"
+  } ],
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1034.360",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.16.840.1.113762.1.4.1034.360"
+  } ],
+  "version": "20210113",
+  "name": "GlucoseToleranceTestingLOINC",
+  "title": "Glucose Tolerance Testing (LOINC)",
+  "status": "retired",
+  "experimental": false,
+  "date": "2021-01-13T01:00:22-05:00",
+  "publisher": "American Academy of Neurology Steward",
+  "expansion": {
+    "identifier": "urn:uuid:abf06ce8-ecbd-4399-a5dd-743deeb81214",
+    "timestamp": "2024-06-04T13:46:08-04:00",
+    "total": 11,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
+    "contains": [ {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "21004-7",
+      "display": "Glucose tolerance [Interpretation] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "49688-5",
+      "display": "Glucose tolerance [Interpretation] in Serum or Plasma Narrative--post 75 g glucose PO"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "49689-3",
+      "display": "Glucose tolerance [Interpretation] in Serum or Plasma Narrative--post 100 g glucose PO"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "50586-7",
+      "display": "Glucose tolerance 3 hours panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "50587-5",
+      "display": "Glucose tolerance 4 hours panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "50588-3",
+      "display": "Glucose tolerance 5 hours panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "50589-1",
+      "display": "Glucose tolerance 6 hours panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "50667-5",
+      "display": "Glucose tolerance [Interpretation] in Serum or Plasma Narrative"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "62856-0",
+      "display": "PhenX - oral glucose tolerance test protocol 141001"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "72171-2",
+      "display": "Glucose tolerance 2 hours panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.77",
+      "code": "93794-6",
+      "display": "Glucose tolerance and insulin sensitivity 2 hour panel - Serum or Plasma"
+    } ]
+  }
+}

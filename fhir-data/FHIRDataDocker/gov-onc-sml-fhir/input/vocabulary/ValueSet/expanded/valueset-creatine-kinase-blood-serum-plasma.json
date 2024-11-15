@@ -1,0 +1,136 @@
+{
+  "resourceType": "ValueSet",
+  "id": "creatine-kinase-blood-serum-plasma",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "narrative"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+    "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  } ],
+  "url": "http://emiadvisors.net/fhir/ValueSet/creatine-kinase-blood-serum-plasma",
+  "version": "20240531",
+  "title": "Creatine Kinase Blood, Serum, or Plasma",
+  "status": "active",
+  "experimental": false,
+  "publisher": "EMI Advisors, Inc.",
+  "expansion": {
+    "timestamp": "2024-06-12T08:19:28-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "49551-5",
+      "display": "Creatine kinase.MB [Mass/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "50757-4",
+      "display": "Creatine kinase.total/Creatine kinase.MB"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2158-4",
+      "display": "Creatine kinase.total/Creatine kinase.MB [Enzymatic activity ratio] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "9642-0",
+      "display": "Creatine kinase.BB/Creatine kinase.total in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "49136-5",
+      "display": "Creatine kinase.MB/Creatine kinase.total [Ratio] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "9643-8",
+      "display": "Creatine kinase.MM/Creatine kinase.total in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "24335-2",
+      "display": "Creatine kinase panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "20569-0",
+      "display": "Creatine kinase.MB/Creatine kinase.total in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "12189-7",
+      "display": "Creatine kinase.MB/Creatine kinase.total in Serum or Plasma by calculation"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2157-6",
+      "display": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "15048-2",
+      "display": "Creatine kinase.BB/Creatine kinase.total in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "72565-5",
+      "display": "Creatine kinase.BB/Creatine kinase.total [Pure catalytic fraction] in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "12187-1",
+      "display": "Creatine kinase.MB/Creatine kinase.total in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "5912-1",
+      "display": "Creatine kinase isoenzymes [Interpretation] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "72563-0",
+      "display": "Creatine kinase.MB/Creatine kinase.total [Pure catalytic fraction] in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "14680-3",
+      "display": "Creatine kinase isoenzymes [Interpretation] in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "38482-6",
+      "display": "Creatine kinase.MB [Presence] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "32673-6",
+      "display": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "13969-1",
+      "display": "Creatine kinase.MB [Mass/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2152-7",
+      "display": "Creatine kinase.BB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "101446-3",
+      "display": "Creatine kinase.MB [Moles/volume] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2154-3",
+      "display": "Creatine kinase.MB [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis"
+    }, {
+      "system": "http://loinc.org",
+      "code": "83092-7",
+      "display": "Creatine kinase.MB [Mass/volume] in Serum or Plasma by Immunoassay"
+    }, {
+      "system": "http://loinc.org",
+      "code": "50757-4",
+      "display": "Creatine kinase.total/Creatine kinase.MB [Enzymatic activity ratio] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2155-0",
+      "display": "Creatine kinase.MM [Enzymatic activity/volume] in Serum or Plasma by Electrophoresis"
+    } ]
+  }
+}
