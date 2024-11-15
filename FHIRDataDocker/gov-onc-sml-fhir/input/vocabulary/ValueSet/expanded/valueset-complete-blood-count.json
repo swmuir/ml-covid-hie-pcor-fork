@@ -1,0 +1,168 @@
+{
+  "resourceType": "ValueSet",
+  "id": "complete-blood-count",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "narrative"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+    "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  } ],
+  "url": "http://emiadvisors.net/fhir/ValueSet/complete-blood-count",
+  "version": "20240531",
+  "title": "Complete Blood Count",
+  "status": "active",
+  "experimental": false,
+  "publisher": "EMI Advisors, Inc.",
+  "expansion": {
+    "timestamp": "2024-06-12T08:19:13-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "57021-8",
+      "display": "CBC W Auto Differential panel - Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "58410-2",
+      "display": "CBC panel - Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "6690-2",
+      "display": "Leukocytes [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "789-8",
+      "display": "Erythrocytes [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "718-7",
+      "display": "Hemoglobin [Mass/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "4544-3",
+      "display": "Hematocrit [Volume Fraction] of Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "787-2",
+      "display": "MCV [Entitic volume] by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "785-6",
+      "display": "MCH [Entitic mass] by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "786-4",
+      "display": "MCHC [Mass/volume] by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "21000-5",
+      "display": "Erythrocyte distribution width [Entitic volume] by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "788-0",
+      "display": "Erythrocyte distribution width [Ratio] by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "777-3",
+      "display": "Platelets [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "32207-3",
+      "display": "Platelet distribution width [Entitic volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "32623-1",
+      "display": "Platelet mean volume [Entitic volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "57023-4",
+      "display": "Auto Differential panel - Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "770-8",
+      "display": "Neutrophils/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "35332-6",
+      "display": "Band form neutrophils/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "19023-1",
+      "display": "Granulocytes/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "736-9",
+      "display": "Lymphocytes/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "42250-1",
+      "display": "Variant lymphocytes/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "5905-5",
+      "display": "Monocytes/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "713-8",
+      "display": "Eosinophils/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "706-2",
+      "display": "Basophils/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "58409-4",
+      "display": "Other cells/100 leukocytes in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "751-8",
+      "display": "Neutrophils [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "30229-9",
+      "display": "Band form neutrophils [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "731-0",
+      "display": "Lymphocytes [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "43743-4",
+      "display": "Variant lymphocytes [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "742-7",
+      "display": "Monocytes [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "711-2",
+      "display": "Eosinophils [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "704-7",
+      "display": "Basophils [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "51383-8",
+      "display": "Leukocytes other [#/volume] in Blood by Automated count"
+    }, {
+      "system": "http://loinc.org",
+      "code": "58443-3",
+      "display": "Other cells [#/volume] in Blood by Automated count"
+    } ]
+  }
+}

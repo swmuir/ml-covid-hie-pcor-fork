@@ -1,0 +1,113 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113762.1.4.1247.17",
+  "meta": {
+    "versionId": "12",
+    "lastUpdated": "2024-06-04T01:21:19.000-04:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
+    "valueDate": "2024-06-04"
+  } ],
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1247.17",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:oid:2.16.840.1.113762.1.4.1247.17"
+  } ],
+  "version": "20240604",
+  "name": "FoodInsecurityDiagnoses",
+  "title": "Food Insecurity Diagnoses",
+  "status": "active",
+  "date": "2024-06-04T01:21:19-04:00",
+  "publisher": "The Gravity Project Steward",
+  "expansion": {
+    "identifier": "urn:uuid:98e5676e-7250-44ac-b8de-88331f41a56b",
+    "timestamp": "2024-06-04T13:45:48-04:00",
+    "total": 15,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "1155680000",
+      "display": "Limited access to nutrition supplies (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "129832003",
+      "display": "Noncompliance with dietary regimen (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "445281000124101",
+      "display": "Nutrition impaired due to limited access to healthful foods (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "470911000124109",
+      "display": "Mild food insecurity on United States household food security survey module (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "470941000124108",
+      "display": "Moderate food insecurity on United States household food security survey module (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "470951000124105",
+      "display": "Severe food insecurity on United States household food security survey module (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "706875005",
+      "display": "Insufficient food supply (finding)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20240301",
+      "code": "733423003",
+      "display": "Food insecurity (finding)"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "E63.9",
+      "display": "Nutritional deficiency, unspecified"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z59.41",
+      "display": "Food insecurity"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z59.48",
+      "display": "Other specified lack of adequate food"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z71.88",
+      "display": "Encounter for counseling for socioeconomic factors"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z91.11",
+      "display": "Patient's noncompliance with dietary regimen"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z91.110",
+      "display": "Patient's noncompliance with dietary regimen due to financial hardship"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10-cm",
+      "version": "2024",
+      "code": "Z91.A10",
+      "display": "Caregiver's noncompliance with patient's dietary regimen due to financial hardship"
+    } ]
+  }
+}

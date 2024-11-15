@@ -1,0 +1,24 @@
+docker-compose -f docker-compose-synthea.yml up  --wait
+
+sleep 60s
+
+cd synthea
+docker build --no-cache -t onc.sml.synthea .
+ 
+docker run --network="host"  -v /$(pwd)/fhir:/oncfhirinput -it  onc.sml.synthea 
+
+cd ..
+
+cd generate
+
+docker build -f DockerfileGenerate -t onc.sml.generate .
+ 
+docker build -f DockerfileEmbeddings -t onc.sml.embeddings . 
+
+docker run --network="host"  -v /$(pwd)/output:/oncmloutput  -it  onc.sml.generate
+
+docker run --network="host"  -v /$(pwd)/output:/oncmloutput  -it   onc.sml.embeddings
+
+cd ..
+
+docker-compose -f docker-compose-synthea.yml down
