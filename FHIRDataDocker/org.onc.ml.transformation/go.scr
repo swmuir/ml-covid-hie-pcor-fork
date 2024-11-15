@@ -1,5 +1,0 @@
-
-docker build -t onc.sml.transformation:latest .
- 
-docker-compose up -d
-
