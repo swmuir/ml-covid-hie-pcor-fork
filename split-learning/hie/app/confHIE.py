@@ -1,0 +1,10 @@
+world_size = 2
+epochs = 50
+iterations = 5
+batch_size = 32
+datapath = "data/"
+lr = 0.001
+address = "localhost"
+port = 7732
+ifname = "eth0"
+nodeID = "hie0"
