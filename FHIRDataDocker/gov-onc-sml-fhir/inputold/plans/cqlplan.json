@@ -1,0 +1,505 @@
+{
+	"plan": [
+		{
+			"library": "Demographics",
+			"noop": "true",
+			"datapoints": [
+				{
+					"key": "AccountIdentifier"
+				},
+				{
+					"key": "PatientAdministrationGenderCode"
+				},
+				{
+					"key": "PatientBirthDateTime"
+				}
+			]
+		},
+		{
+			"library": "CovidVitalSigns",
+			"continual": "true",
+			"datapoints": [
+				{
+					"key": "ReportVitalSigns",
+					"datapoints": [
+						{
+							"key": "Systolic Blood Pressure",
+							"code": "4DAC6CE6-9093-46C7-95F8-3DAE7F4B6F30",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Diastolic Blood Pressure",
+							"code": "59A9A05B-544F-4360-803D-5C201565769A",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Body Weight",
+							"code": "717D1C82-F080-4172-BD55-5D8AD37A4E75",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Body Height",
+							"code": "2EFEA90D-C7EA-4A56-B79D-1B023E01923E",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "BMI",
+							"code": "75C87320-6270-419C-B7BB-6287E66E6818",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Body Temperature",
+							"code": "E5A44203-031A-42AA-9225-0022B4D2B042",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Heart Rate",
+							"code": "BD059F41-F5C4-45E1-8AB8-6D42806BBB90",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Oxygen Saturation",
+							"code": "E90DAD07-499B-4796-BA51-FD0BB1717570",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Respiratory Rate",
+							"code": "A7F75F61-BBDC-4383-A40D-96FFF05C2F9C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						}
+					]
+				}
+			]
+		},
+		{
+			"library": "CovidConditions",
+			"datapoints": [
+				{
+					"key": "ReportConditions",
+					"datapoints": [
+						{
+							"key": "Acute COVID 19 Diagnosis",
+							"code": "290D3890-5C47-4855-913B-D66C95094826",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Post Acute Sequelae of Sars Cov 2 infection (PASC)",
+							"code": "47DCD460-6DAE-4CF7-B3B8-3022785A8086",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Acute Myocardial Infarction",
+							"code": "911C3385-45FC-401D-8C07-343EB927F909",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Ischemic Heart Disease",
+							"code": "4090FE64-A680-4AAE-B996-64F7906D9DF7",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Acute Coronary Syndromes",
+							"code": "1F88F06B-B2A2-4FDF-8C71-91BAD38B93FD",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Bronchiectasis Diagnosis",
+							"code": "8D7EF577-B683-4118-BC4A-5EEF0969A4AB",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Hypertension, Pulmonary hypertension",
+							"code": "BB0754A6-39C2-4168-B6F3-30C0A4E44F5E",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Pulmonary embolism diagnosis",
+							"code": "D395F60E-B8B4-4AB6-BB98-96144AC41D6E",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Cerebrovascular disease diagnosis",
+							"code": "538E3755-13FA-468A-B443-9A7E3CFCD749",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Chronic kidney disease all stages (1 through 5)",
+							"code": "85C9B62C-9E07-4E67-A007-F56DE2D8A02A",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Cirrhosis or other liver disease",
+							"code": "348974AC-354F-489A-97B8-09CE0FD05833",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Chronic obstructive pulmonary disease (COPD) Diagnosis",
+							"code": "FA3DC355-3CC2-4DDE-9E22-797BEF3AADEC",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Type 1 Diabetes",
+							"code": "09E63BE2-5575-49AA-97EA-ECC9762B3E60",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Type II Diabetes",
+							"code": "D3763934-0C64-4918-9F37-830BCF70FD72",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Heart Failure Diagnosis",
+							"code": "9F2B51CB-0F45-4872-8A9E-59348FFC2DED",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Coronary Artery Disease No MI",
+							"code": "DA02A377-4DC8-46A7-9A41-DBDBCD1F5E47",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Cardiomyopathy",
+							"code": "641949D5-4900-495C-ADC4-BB5C7B0941F3",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Interstitial lung disease diagnosis",
+							"code": "86E7B409-B6FA-447F-BAE5-8E7BF01B3110",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Ever tobacco smoker",
+							"code": "CAFCEF28-8940-4015-BC8E-26471856609D",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Tuberculosis Disorders",
+							"code": "0038DB94-5FFF-4B79-A090-B1B4AB64B171",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Obesity Conditions",
+							"code": "6AEBA038-8FD7-4B0D-B39F-1B5ADCE8DC63",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Pregnancy",
+							"code": "37E5098F-FAA2-48E4-A16D-765D4BFC193B",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Depression Diagnosis",
+							"code": "CD9FF49F-1FCC-4451-832D-0ED11A6AB104",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Schizophrenia",
+							"code": "E2D380FE-759D-4BF0-957D-1BABD12C5C40",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "HIV",
+							"code": "65ABFFBF-92C3-4DAB-9B32-4A1B61060A15",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Dementia and Related Intracranial Pathologies",
+							"code": "B67C4E7D-D033-4CF4-AAA1-6984440DC01C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Overweight or Obese",
+							"code": "2EE0B73B-F40F-430D-A784-36DA2BB98B5C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Sickle cell disease and related blood disorders",
+							"code": "6350265A-E32C-4E16-82D9-48EEC33C7846",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Substance abuse",
+							"code": "9C34053D-55F7-4B31-A5D2-DEA42E5CC732",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Cystic fibrosis",
+							"code": "53AA46CA-9214-4675-9A99-A1CCAD518735",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Thalassemia",
+							"code": "6309810E-9889-4A68-8FE9-6A55F0E65E07",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Asthma diagnosis",
+							"code": "3B755FD6-4E79-4CD5-83B9-DC208FD9A964",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Hypertension, Primary and Secondary Diagnosis",
+							"code": "1780E6C1-E74D-4BCB-B71E-3705D6922100",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Chronic Pain Conditions",
+							"code": "D83FE133-8D62-4FCB-9786-1942B79D01EF",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "PostTraumatic stress disorder PTSD",
+							"code": "0B21D588-34C1-436F-ABD5-DC866CBD8592",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Myalgic Encephalomyelitis or Chronic Fatigue Syndrome",
+							"code": "A2F7822F-B5D0-4627-9935-41840ED61DBB",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Postural tachycardia syndrome (POTS) Diagnosis",
+							"code": "FF07324E-1C35-4C8B-A9CE-A5D3AAA8B23C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Ehlers-Danlos syndrome",
+							"code": "87F371F7-4C22-40D8-9B37-4CD9B2D8091B",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Stroke",
+							"code": "65C9469D-7E06-419B-9F58-3203220CA774",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Food insecurity diagnoses",
+							"code": "72D7DA14-44F8-48CE-9F96-89CDD7F1C241",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Housing insecurity",
+							"code": "B0447F24-49E1-413E-9FBF-FB7855D68893",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Transportation insecurity",
+							"code": "1101EEED-1D6D-4715-BC6A-48E862DE7214",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "SNOMED Codes",
+							"code": "38253874-A87D-4A4B-9241-9A4BB973D923",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML",
+							"count": "5"
+						},
+						{
+							"key": "ICD-10 Codes",
+							"code": "F2E296FD-FFA2-41A1-8863-3D97BD18E01C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML",
+							"count": "5"
+						}
+					]
+				}
+			]
+		},
+		{
+			"library": "CovidLabResults",
+			"continual": "true",
+			"datapoints": [
+				{
+					"key": "ReportLabResults",
+					"datapoints": [
+						{
+							"key": "COVID19 Lab Tests",
+							"code": "4BF7F302A-7AE1-4921-973E-38EA818231D8",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Hemoglobin A1C",
+							"code": "5AA4CA62-1CDC-495B-8CDE-CDAACCE7A762",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Blood Urea Nitrogen",
+							"code": "899F96AF-6A16-40DC-AB11-4EF71FCF40B2",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Bilirubin lab test",
+							"code": "70E9DF66-D6F6-46AB-B1FD-AD0A8A4935F5",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Troponin Lab Test",
+							"code": "DCDE1CA6-1D8F-45E8-9F2D-88621B73514E",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Ferritin",
+							"code": "F5D8F8F6-82C9-4F85-A1B3-A340EF00BA27",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Glucose Tolerance Testing",
+							"code": "1F3E6369-6671-4F4F-B80C-DD468C989FDB",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Cerebral Spinal Fluid (CSF) Analysis",
+							"code": "3DCFFD07-8C88-47F2-9481-B5E63478C007",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Arterial Blood Gas",
+							"code": "46BF51DA-CF3C-4F80-9CAD-773ADAA1A872",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Comprehensive Metabolic Panel",
+							"code": "69E10749-444B-4503-9191-D72778E8B489",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Chloride, Urine",
+							"code": "C0565E61-48D0-48B4-8C21-595FD6A452DF",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Calcium in Blood, Serum or Plasma",
+							"code": "DE293C50-82EE-488B-A1BA-8377A59BB28D",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Magnesium in Blood, Serum or Plasma",
+							"code": "0EC949BD-D683-4219-8106-11E99BAF9F0C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Magnesium in Urine",
+							"code": "B31979B0-36B5-4146-A400-5C275A35D4C7",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Chloride, Blood, Serum, or Plasma",
+							"code": "4DC90D4F-DF80-4179-AFDC-6341D460832A",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Creatinine, Urine",
+							"code": "ECCE80AE-3425-402F-B3D8-579550FD5F7C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Creatinine, Blood, Serum, or Plasma",
+							"code": "10E417C8-15B6-4B09-BF27-5E5174B3DB83",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Phosphate Blood, Serum, or Plasma",
+							"code": "ED181B27-780C-4F3B-B1E4-C4C56E5FE62F",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Coagulation Assay",
+							"code": "93AD35F9-BACD-4F6A-8002-9CBCF6F57C0A",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Complete Blood Count",
+							"code": "F39165EB-1FD2-4BCA-9124-7BEB9CA3C57C",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Creatine Kinase Blood, Serum, or Plasma",
+							"code": "2BE92AF9-0462-4AED-8BF0-A9FF978AA5D1",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "D Dimer Test",
+							"code": "9309D1C4-8319-4845-BAC2-FCC86B82967E",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Electrolytes Panel Blood, Serum, or Plasma",
+							"code": "6CDAA9B9-5EBE-4F4A-82AA-6EF2705C7CE9",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Inflammatory Markers (CRP) Blood, Serum, or Plasma",
+							"code": "85B4BB8B-3078-4B4B-833F-B08620A62664",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Lipid Serum, or Plasma",
+							"code": "15D122F3-0D64-4C92-9273-985AE1B9CDFB",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Sputum Culture",
+							"code": "35556DB8-510D-4654-91AD-2580CA1278D0",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Urine Collection 24 Hours",
+							"code": "D5017C57-A276-4844-B47F-DFC0A46EC3E3",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						},
+						{
+							"key": "Urine Routine",
+							"code": "D83881BC-553B-4144-B3D0-B94576975F9B",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						}
+					]
+				}
+			]
+		},
+		{
+			"library": "CovidOtherObservations",
+			"datapoints": [
+				{
+					"key": "ReportOtherObservations",
+					"datapoints": [
+						{
+							"key": "Smoking Status",
+							"code": "D8E81215-98D8-41B8-B2F2-14F4BD75D261",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						}
+					]
+				}
+			]
+		},
+		{
+			"library": "CovidProcedures",
+			"datapoints": [
+				{
+					"key": "ReportProcedures",
+					"datapoints": [
+						{
+							"key": "Procedure Codes",
+							"code": "419CA824-BA57-4B7E-93F2-9766D0D82413",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML",
+							"count": "5"
+						}
+					]
+				}
+			]
+		},
+		{
+			"library": "Notes",
+			"noop": "true",
+			"datapoints": [
+				{
+					"key": "EncounterDocuments",
+					"datapoints": [						
+						{
+							"key": "Notes",
+							"code": "456db601-2519-42e9-a960-4853c99882d7",
+							"system": "http://terminology.hl7.org/CodeSystem/ONCML"
+						}
+					]
+				}
+			]
+		}
+	]
+}

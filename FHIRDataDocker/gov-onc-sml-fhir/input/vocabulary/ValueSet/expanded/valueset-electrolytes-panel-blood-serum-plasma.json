@@ -1,0 +1,120 @@
+{
+  "resourceType": "ValueSet",
+  "id": "electrolytes-panel-blood-serum-plasma",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-publishablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "narrative"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-usageWarning",
+    "valueString": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated. The value set expansion specifies the timestamp when the expansion was produced, SHOULD contain the parameters used for the expansion, and SHALL contain the codes that are obtained by evaluating the value set definition. If this is ONLY an executable value set, a distributable definition of the value set must be obtained to compute the updated expansion."
+  } ],
+  "url": "http://emiadvisors.net/fhir/ValueSet/electrolytes-panel-blood-serum-plasma",
+  "version": "20240531",
+  "title": "Electrolytes Panel Blood, Serum, or Plasma",
+  "status": "active",
+  "experimental": false,
+  "publisher": "EMI Advisors, Inc.",
+  "expansion": {
+    "timestamp": "2024-06-12T08:19:18-06:00",
+    "contains": [ {
+      "system": "http://loinc.org",
+      "code": "55231-5",
+      "display": "Electrolytes panel - Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2947-0",
+      "display": "Sodium [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "6298-4",
+      "display": "Potassium [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2069-3",
+      "display": "Chloride [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "20565-8",
+      "display": "Carbon dioxide, total [Moles/volume] in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "41276-7",
+      "display": "Anion gap in Blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "101565-0",
+      "display": "Electrolytes panel - Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "39791-9",
+      "display": "Sodium [Moles/volume] in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "39789-3",
+      "display": "Potassium [Moles/volume] in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "41649-5",
+      "display": "Chloride [Moles/volume] in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "73578-7",
+      "display": "Anion gap 4 in Venous blood"
+    }, {
+      "system": "http://loinc.org",
+      "code": "48391-7",
+      "display": "Carbon dioxide, total [Moles/volume] in Venous blood by calculation"
+    }, {
+      "system": "http://loinc.org",
+      "code": "24326-1",
+      "display": "Electrolytes 1998 panel - Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2951-2",
+      "display": "Sodium [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2823-3",
+      "display": "Potassium [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2075-0",
+      "display": "Chloride [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "1963-8",
+      "display": "Bicarbonate [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2028-9",
+      "display": "Carbon dioxide, total [Moles/volume] in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "33037-3",
+      "display": "Anion gap in Serum or Plasma"
+    }, {
+      "system": "http://loinc.org",
+      "code": "34554-6",
+      "display": "Electrolytes 1998 and Venous pH panel - Serum or Plasma + Blood venous"
+    }, {
+      "system": "http://loinc.org",
+      "code": "2746-6",
+      "display": "pH of Venous blood"
+    } ]
+  }
+}
