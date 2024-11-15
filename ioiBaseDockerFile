@@ -1,0 +1,9 @@
+
+#745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/base
+FROM nvidia/cuda:12.6.1-base-amzn2023
+LABEL maintainer="Chit Zin Win <chit.win@interoperabilityinstitute.org>"
+
+RUN dnf install python3.11 python3.11-pip stunnel wget tar make gcc perl nc procps openssl gettext git -y
+
+RUN ln -sf /usr/bin/python3.11 /usr/bin/python3 && ln -sf /usr/bin/pip3.11 /usr/bin/pip3
+RUN pip3 install supervisor==4.2.5 "s3fs<=2023.10.0" botocore==1.35.29

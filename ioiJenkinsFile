@@ -1,0 +1,77 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('AWS/Docker Login') {
+            steps{
+                sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 745222113226.dkr.ecr.us-east-1.amazonaws.com'
+                
+            }
+        }
+        // stage('Generate csv') {
+        //     steps {
+        //         echo 'Generating examplefile.csv'
+        //         sh 'pwd'
+        //         sh 'cd FHIRDataDocker'
+        //         sh 'chmod +=wrx loadFromLocalSynthea.sh'
+        //         sh './loadFromLocalSynthea.sh -i ~/test/FHIRDataDocker/synthea/fhir -o ~/test/FHIRDataDocker/synthea/mloutput'
+        //         sh 'cd ..'
+        //         sh 'pwd'
+        //     }
+        // }
+        // stage('Import data folder'){
+        //     steps {
+        //         echo 'Importing data folder into hie1'
+        //         sh 'sudo mv FHIRDataDocker/synthea/mloutput/mloutput.csv FHIR_ML_CODE/hie1/app/examplefile.csv'
+        //     }
+        // }
+        stage('Build Docker Images') {
+            steps {
+                echo 'Building central and hie1 images'
+                // we already persisted torch in EBS
+                sh 'sed -i \'/^torch\\|lightning/d\' requirements.txt'
+                sh 'docker system prune -a --volumes -f'
+                sh 'docker build -f Dockerfile --target central --build-arg BASE_IMAGE=745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/base:latest -t bookzurman/central:latest .'
+                // sh 'docker build -f Dockerfile --target hie -t bookzurman/hie1:latest .'
+            }
+        }
+        stage('Push Images to ECR') {
+            steps {
+                echo 'Pushing central and hie1 to AWS ECR'
+                sh 'docker tag bookzurman/central:latest 745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/central:latest'
+                // sh 'docker tag bookzurman/hie1:latest 745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/hie1:latest'
+                sh 'docker push 745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/central:latest'
+                // sh 'docker push 745222113226.dkr.ecr.us-east-1.amazonaws.com/bookzurman/hie1:latest'
+            }
+        }
+        stage('Deploy to EKS') {
+            steps {
+                sh '''
+                    # Set the timeout duration (15 minutes)
+                    TIMEOUT=900  # 15 minutes
+
+                    # Use timeout to limit the execution duration
+                    timeout "$TIMEOUT" bash -c '
+                        while kubectl get pods --no-headers -n default | grep '^central-' | grep 'Running'; do
+                            echo "Waiting for existing pod to complete..."
+                            sleep 5
+                        done
+                    ' || echo "Timeout reached after 15 minutes."
+                '''
+                
+                sh '''
+                    if [ -z "$(kubectl get pods --no-headers -n default | grep '^central-' | awk '{print $3}' | grep -v 'Completed')" ]; then
+                        echo "All existing central pods are in completed state."
+                        echo 'Deploying a new one....' 
+                        aws eks update-kubeconfig --region us-east-1 --name bookzurma-prod-ZeZLUM7s --role-arn arn:aws:iam::745222113226:role/bookzurman-eks-admin-role
+                        kubectl create -f ioiJob.yml -n default
+                    else
+                        echo "Not all existing central pods are completed."
+                        exit 1
+                    fi
+
+                '''
+            }
+        }
+    }
+}

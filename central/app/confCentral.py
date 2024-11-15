@@ -1,0 +1,11 @@
+world_size = 2
+epochs = 2
+iterations = 2
+batch_size = 32
+datapath = "data/"
+lr = 0.001
+address = "localhost"
+port = 7732
+ifname = "eth0"
+userName = "userDEF"
+userPass = "userPSD"
