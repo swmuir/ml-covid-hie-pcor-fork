@@ -93,6 +93,7 @@ public class ExecuteCQLUtil {
 
 		Repository repository = createRepository(fhirContext, bundle, null);
 
+
 		var engine = Engines.forRepositoryAndSettings(evaluationSettings, repository, null, null, true);
 
 		var provider = new DefaultLibrarySourceProvider(Path.of(cqlLibraries));

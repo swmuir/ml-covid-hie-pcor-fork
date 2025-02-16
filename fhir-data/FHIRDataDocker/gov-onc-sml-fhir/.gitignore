@@ -1,3 +1,4 @@
+hapi.postgress.data/
 *.orig
 target/
 *.iml

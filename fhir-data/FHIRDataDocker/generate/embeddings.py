@@ -172,6 +172,8 @@ print(f"Processed file saved to {output_file_path}")
 ####################################################
 import base64
 import torch
+
+
 import transformers
 from transformers import AutoModelForTokenClassification, AutoTokenizer, pipeline, AutoModel
 import numpy as np
@@ -194,7 +196,17 @@ nlp = spacy.load("en_core_med7_trf")
 
 # Load BioBERT model and tokenizer
 biobert_model_name = "emilyalsentzer/Bio_ClinicalBERT"
-device = "cuda" if torch.cuda.is_available() else "cpu"
+#device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+#device = "cuda" if torch.cuda.is_available() else "cpu"
+
+
+if torch.backends.mps.is_available():
+    device = "mps"  # Apple GPU acceleration
+elif torch.cuda.is_available():
+    device = "cuda"  # NVIDIA GPU (not on Mac)
+else:
+    device = "cpu"  # Default fallback
+
 biobert_model = AutoModel.from_pretrained(biobert_model_name).to(device)
 biobert_tokenizer = AutoTokenizer.from_pretrained(biobert_model_name)
 
@@ -202,7 +214,11 @@ biobert_tokenizer = AutoTokenizer.from_pretrained(biobert_model_name)
 deid_model_name = "obi/deid_roberta_i2b2"
 deid_model = AutoModelForTokenClassification.from_pretrained(deid_model_name).to(device)
 deid_tokenizer = AutoTokenizer.from_pretrained(deid_model_name)
-deid_pipeline = pipeline("ner", model=deid_model, tokenizer=deid_tokenizer, aggregation_strategy="simple", device=0)
+
+thedevice = 0 if torch.backends.mps.is_available() else -1  # MPS if available, else CPU
+nlp_pipeline = pipeline("text-generation", model="gpt2", device=device)
+
+deid_pipeline = pipeline("ner", model=deid_model, tokenizer=deid_tokenizer, aggregation_strategy="simple", device=thedevice)
 
 def deidentify_text(text):
     ner_results = deid_pipeline(text)

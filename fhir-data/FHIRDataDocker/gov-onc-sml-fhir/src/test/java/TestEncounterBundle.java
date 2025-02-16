@@ -40,11 +40,11 @@ class TestEncounterBundle {
 	@BeforeAll
 	public static void setEnvironment() {
 		System.setProperty("synthea.bundles", "src/test/resources/synthea1");
-		
+
 	    System.setProperty("cql.libraries", "input/cql");
         System.setProperty("cql.vocabulary", "input/vocabulary");
         System.setProperty("cql.planFolder", "input/plans/");
-        
+
 	}
 
 	private static final org.slf4j.Logger ourLog = org.slf4j.LoggerFactory.getLogger(TestEncounterBundle.class);
@@ -64,24 +64,24 @@ class TestEncounterBundle {
 	}
 
 	void postSyntheaBundles() throws IOException {
-		
-	 
-		
+
+
+
 		Consumer<? super Path> loadSyntheaBundle = new Consumer<Path>() {
 			@Override
 			public void accept(Path bundlePath) {
 				try {
 					System.err.println(bundlePath);
 					Bundle bundle= (Bundle) ourCtx.newJsonParser().parseResource(Files.readString(bundlePath));;
-					Bundle resp = ourClient.transaction().withBundle(bundle).execute();					
+					Bundle resp = ourClient.transaction().withBundle(bundle).execute();
 				} catch (IOException e) {
 e.printStackTrace();
 				}
 			}
 		};
 		try {
-			
-			
+
+
 			try (Stream<Path> paths = Files.walk(Paths.get(System.getProperty("synthea.bundles")))) {
 				paths.filter(Files::isRegularFile).filter(bundleStartsWith("practitionerInformation"))
 				.forEach(loadSyntheaBundle);
@@ -92,43 +92,43 @@ e.printStackTrace();
 						.forEach(loadSyntheaBundle);
 
 			}
-			
+
 			//Carmelina668
 			try (Stream<Path> paths = Files.walk(Paths.get(System.getProperty("synthea.bundles")))) {
 
 				paths.filter(Files::isRegularFile).filter(bundleIsPatient()).forEach(loadSyntheaBundle);
-				
-				 
+
+
 
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
- 
+
+
 
 	}
-	
-	
+
+
 	void postCovidBundles(String covidPath) throws IOException {
-		
-	 
-		
+
+
+
 		Consumer<? super Path> loadCovidBundle = new Consumer<Path>() {
 			@Override
 			public void accept(Path bundlePath) {
 				try {
 					System.err.println(bundlePath);
 					Bundle bundle= (Bundle) ourCtx.newJsonParser().parseResource(Files.readString(bundlePath));;
-					Bundle resp = ourClient.transaction().withBundle(bundle).execute();					
+					Bundle resp = ourClient.transaction().withBundle(bundle).execute();
 				} catch (IOException e) {
 
 				}
 			}
 		};
 		try {
-			
-			
+
+
 			try (Stream<Path> paths = Files.walk(Paths.get(covidPath))) {
 				paths.filter(Files::isRegularFile).sorted().forEach(loadCovidBundle);
 			}
@@ -138,7 +138,7 @@ e.printStackTrace();
 //						.forEach(loadSyntheaBundle);
 //
 //			}
-//			
+//
 //			//Carmelina668
 //			try (Stream<Path> paths = Files.walk(Paths.get(System.getProperty("synthea.bundles")))) {
 //
@@ -148,174 +148,174 @@ e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
- 
+
+
 
 	}
 
 	@Test
 	void testBundleOfBundles() throws Exception {
-		
-		
-		
+
+
+
 		postSyntheaBundles();
 		String methodName = "testBundleOfBundles";
 		ourLog.info("Entering " + methodName + "()...");
-		
+
 		Bundle thePatients = (Bundle) ourClient.search().forResource("Patient").execute();
-		
+
 		List<IBaseResource> patients = new ArrayList<>();
-		
+
 		patients.addAll(BundleUtil.toListOfResources(ourCtx, thePatients));
-		
-	 
-			
-		
+
+
+
+
 		for (IBaseResource resource: patients) {
-			Patient patient = (Patient) resource;			
+			Patient patient = (Patient) resource;
 			System.err.println(  ourCtx.newJsonParser().encodeResourceToString(thePatients));
 			System.err.println(patient.getIdElement().getIdPart());
 			bundleOfBundlesOperation(patient.getIdElement().getIdPart());
 //			break;
 			bundleOfBundlesOperationAnnotations(patient.getIdElement().getIdPart());
-//			bundleOfBundlesQAOperation(patient.getIdElement().getIdPart());
-//			bundleOfBundlesQAOperationByPatient(patient.getIdElement().getIdPart());
+			bundleOfBundlesQAOperation(patient.getIdElement().getIdPart());
+			bundleOfBundlesQAOperationByPatient(patient.getIdElement().getIdPart());
 		}
-	 
-		
+
+
 //		thePatients.getEntry().
-		
+
 //		System.err.println(thePatients);
-		
+
 //		for (Identifier patientIdentifier : patientIdentifiers) {
 //			bundleOfBundlesOperation("patientIdentifier");
 //		}
-		
+
 	}
-	
-	
+
+
 	@Test
 	void testBundleOfBundlesCovid() throws Exception {
 		postCovidBundles("src/test/resources/tests/CovidConditions/mcc-pat-pnoelle");
 		String methodName = "testBundleOfBundles";
 		ourLog.info("Entering " + methodName + "()...");
-		
+
 		Bundle thePatients = (Bundle) ourClient.search().forResource("Patient").execute();
-		
+
 		List<IBaseResource> patients = new ArrayList<>();
-		
+
 		patients.addAll(BundleUtil.toListOfResources(ourCtx, thePatients));
-		
+
 		for (IBaseResource resource: patients) {
-			Patient patient = (Patient) resource;			
+			Patient patient = (Patient) resource;
 			System.err.println(  ourCtx.newJsonParser().encodeResourceToString(thePatients));
 			System.err.println(patient.getIdElement().getIdPart());
-			bundleOfBundlesOperation(patient.getIdElement().getIdPart());			
+			bundleOfBundlesOperation(patient.getIdElement().getIdPart());
 		}
-		
+
 //		thePatients.getEntry().
-		
+
 //		System.err.println(thePatients);
-		
+
 //		for (Identifier patientIdentifier : patientIdentifiers) {
 //			bundleOfBundlesOperation("patientIdentifier");
 //		}
-		
+
 	}
 
-	private void bundleOfBundlesOperation(String thePatientId) throws Exception {	
+	private void bundleOfBundlesOperation(String thePatientId) throws Exception {
 		Parameters inParams = new Parameters();
 		inParams.addParameter().setName("patient").setValue(new StringType(thePatientId));
-		inParams.addParameter().setName("plan").setValue(new StringType("cqlplan"));	
+		inParams.addParameter().setName("plan").setValue(new StringType("cqlplan"));
 		Parameters outParams = ourClient.operation().onServer().named("$bundleofbundles").withParameters(inParams)
-				.useHttpGet() 
+				.useHttpGet()
 				.execute();
 		Resource responseBundle = outParams.getParameter().get(0).getResource();
-		
+
 		Path testPath = Paths.get("target/test-output/bundleofbundles/" + thePatientId);
 		if (!Files.exists(testPath)) {
 			Files.createDirectories(testPath);
 		}
 
 		Path path = Paths.get("target/test-output/bundleofbundles/" + thePatientId + "/Patient" + thePatientId + ".xml");
-		
-		
-		 
+
+
+
 
 		Files.write(path, ourCtx.newXmlParser().setPrettyPrint(true).encodeResourceToString(responseBundle).getBytes() );
-		
+
 	}
-	
-	private void bundleOfBundlesOperationAnnotations(String thePatientId) throws Exception {	
+
+	private void bundleOfBundlesOperationAnnotations(String thePatientId) throws Exception {
 		Parameters inParams = new Parameters();
 		inParams.addParameter().setName("patient").setValue(new StringType(thePatientId));
 		inParams.addParameter().setName("plan").setValue(new StringType("cqlplan"));
 		inParams.addParameter().setName("context").setValue(new StringType("ANNOTATION"));
 		Parameters outParams = ourClient.operation().onServer().named("$bundleofbundles").withParameters(inParams)
-				.useHttpGet() 
+				.useHttpGet()
 				.execute();
 		Resource responseBundle = outParams.getParameter().get(0).getResource();
-		
+
 		Path testPath = Paths.get("target/test-output/bundleofbundlesA/" + thePatientId);
 		if (!Files.exists(testPath)) {
 			Files.createDirectories(testPath);
 		}
 
 		Path path = Paths.get("target/test-output/bundleofbundlesA/" + thePatientId + "/Patient" + thePatientId + ".xml");
-		
-		
-		 
+
+
+
 
 		Files.write(path, ourCtx.newXmlParser().setPrettyPrint(true).encodeResourceToString(responseBundle).getBytes() );
-		
+
 	}
-	
-	private void bundleOfBundlesQAOperation(String thePatientId) throws Exception {	
+
+	private void bundleOfBundlesQAOperation(String thePatientId) throws Exception {
 		Parameters inParams = new Parameters();
 		inParams.addParameter().setName("patient").setValue(new StringType(thePatientId));
 		inParams.addParameter().setName("plan").setValue(new StringType("qaplan"));
 		Parameters outParams = ourClient.operation().onServer().named("$bundleofbundles").withParameters(inParams)
-				.useHttpGet() 
+				.useHttpGet()
 				.execute();
 		Resource responseBundle = outParams.getParameter().get(0).getResource();
-		
+
 		Path testPath = Paths.get("target/test-output/bundleofbundlesqa/" + thePatientId);
 		if (!Files.exists(testPath)) {
 			Files.createDirectories(testPath);
 		}
 
 		Path path = Paths.get("target/test-output/bundleofbundlesqa/" + thePatientId + "/Patient" + thePatientId + ".xml");
-		
-		
-		 
+
+
+
 
 		Files.write(path, ourCtx.newXmlParser().setPrettyPrint(true).encodeResourceToString(responseBundle).getBytes() );
-		
+
 	}
-	
-	
-	private void bundleOfBundlesQAOperationByPatient(String thePatientId) throws Exception {	
+
+
+	private void bundleOfBundlesQAOperationByPatient(String thePatientId) throws Exception {
 		Parameters inParams = new Parameters();
 		inParams.addParameter().setName("patient").setValue(new StringType(thePatientId));
 		inParams.addParameter().setName("plan").setValue(new StringType("qaplan"));
 		inParams.addParameter().setName("context").setValue(new StringType("PATIENT"));
 		Parameters outParams = ourClient.operation().onServer().named("$bundleofbundles").withParameters(inParams)
-				.useHttpGet() 
+				.useHttpGet()
 				.execute();
 		Resource responseBundle = outParams.getParameter().get(0).getResource();
-		
+
 		Path testPath = Paths.get("target/test-output/bundleofbundlespatientqa/" + thePatientId);
 		if (!Files.exists(testPath)) {
 			Files.createDirectories(testPath);
 		}
 
 		Path path = Paths.get("target/test-output/bundleofbundlespatientqa/" + thePatientId + "/Patient" + thePatientId + ".xml");
-		
-		
-		 
+
+
+
 
 		Files.write(path, ourCtx.newXmlParser().setPrettyPrint(true).encodeResourceToString(responseBundle).getBytes() );
-		
+
 	}
 
 	@BeforeEach
@@ -326,58 +326,58 @@ e.printStackTrace();
 		String ourServerBase = "http://localhost:" + port + "/fhir/";
 		ourClient = ourCtx.newRestfulGenericClient(ourServerBase);
 	}
-	
-	
+
+
 	@Test
 	void testBundleOfBundlesBug() throws Exception {
 		postCovidBundles("src/test/resources/tests/CovidConditions/mcc-pat-pnoelle2");
 		String methodName = "testBundleOfBundles";
 		ourLog.info("Entering " + methodName + "()...");
-		
+
 		Bundle thePatients = (Bundle) ourClient.search().forResource("Patient").execute();
-		
+
 		List<IBaseResource> patients = new ArrayList<>();
-		
+
 		patients.addAll(BundleUtil.toListOfResources(ourCtx, thePatients));
-		
+
 		for (IBaseResource resource: patients) {
-			Patient patient = (Patient) resource;			
+			Patient patient = (Patient) resource;
 			System.err.println(  ourCtx.newJsonParser().setPrettyPrint(true) .encodeResourceToString(patient));
 			System.err.println(patient.getIdElement().getIdPart());
 //			bundleOfBundlesOperation(patient.getIdElement().getIdPart());
 			bundleOfBundlesQAOperation(patient.getIdElement().getIdPart());
 		}
-		
+
 //		thePatients.getEntry().
-		
+
 //		System.err.println(thePatients);
-		
+
 //		for (Identifier patientIdentifier : patientIdentifiers) {
 //			bundleOfBundlesOperation("patientIdentifier");
 //		}
-		
+
 	}
-	
-	
+
+
 	@Test
 	void testLoadedBundles() throws Exception {
 		String methodName = "testBundleOfBundles";
 		ourLog.info("Entering " + methodName + "()...");
-		
+
 		Bundle thePatients = (Bundle) ourClient.search().forResource("Patient").execute();
-		
+
 		List<IBaseResource> patients = new ArrayList<>();
-		
+
 		patients.addAll(BundleUtil.toListOfResources(ourCtx, thePatients));
-		
+
 		for (IBaseResource resource: patients) {
-			Patient patient = (Patient) resource;			
+			Patient patient = (Patient) resource;
 //			System.err.println(  ourCtx.newJsonParser().setPrettyPrint(true) .encodeResourceToString(patient));
-		
+
 			bundleOfBundlesOperation(patient.getIdElement().getIdPart());
 			bundleOfBundlesQAOperation(patient.getIdElement().getIdPart());
-			
+
 		}
-		
+
 	}
 }
