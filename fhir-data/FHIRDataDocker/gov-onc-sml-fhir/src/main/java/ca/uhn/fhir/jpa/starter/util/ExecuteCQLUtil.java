@@ -104,7 +104,7 @@ public class ExecuteCQLUtil {
 		Pair<String, Object> contextParameter = null;
 		EvaluationResult result = engine.evaluate(identifier, contextParameter);
 
-		writeResult(result);
+		//writeResult(result);
 
 		return result;
 	}

@@ -688,7 +688,7 @@ public class PatientEncounterBundle {
 					
 					if (results.expressionResults.containsKey(dp.key)) {
 						Tuple tuple =	(Tuple) results.expressionResults.get(dp.key).value();
-						System.err.println(tuple.toString());
+					 
 						for (DataPoint dp2 :dp.dataPoints) {
 							
 							logger.trace("evaluateCQLPlan " + cqlPlan + " " + patient + " item  " + dp2.key);

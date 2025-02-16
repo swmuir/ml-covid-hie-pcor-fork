@@ -32,6 +32,13 @@ management:
     metrics:
       export:
         enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+    org.springframework.web: WARN
+    
 spring:
   main:
     allow-circular-references: true
