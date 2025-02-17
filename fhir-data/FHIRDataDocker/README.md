@@ -1,3 +1,16 @@
+# windows
+
+build.bat
+
+docker-compose up
+
+load.bat
+
+generate.bat
+
+
+
+
 # Build Instructions
 
 cd synthea
